@@ -1,15 +1,47 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+import Test from '../views/Test';
+import Home from '../views/Home';
+import Login from '../views/Login';
+import Register from '../views/Register';
+import Projects from '../views/Projects';
+import Suppliers from '../views/Suppliers';
 
-Vue.use(VueRouter)
 
-  const routes = [
+Vue.use(VueRouter);
+
+const routes = [
   {
     path: '/',
     name: 'Home',
     component: Home
   },
+  {
+    path: '/projects',
+    name: 'Projects',
+    component: Projects
+  },
+  {
+    path: '/suppliers',
+    name: 'Suppliers',
+    component: Suppliers
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: Login
+  },
+  {
+    path: '/register',
+    name: 'Register',
+    component: Register
+  },
+  {
+    path: '/test',
+    name: 'Test',
+    component: Test
+  },
+
   {
     path: '/about',
     name: 'About',
@@ -18,12 +50,12 @@ Vue.use(VueRouter)
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   }
-]
+];
 
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
-})
+});
 
-export default router
+export default router;

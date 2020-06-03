@@ -1,5 +1,14 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
+  <div>
+    <h1 class="headline mb-3 blue-grey--text" style="letter-spacing:2px !important;">About Page</h1>
   </div>
 </template>
+
+<script>
+export default {
+  name: "about"
+};
+</script>
+
+<style scoped>
+</style>

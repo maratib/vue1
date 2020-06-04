@@ -9,7 +9,18 @@
     min-width="290px"
   >
     <template v-slot:activator="{ on }">
-      <v-text-field v-model="innerDate" v-bind="$attrs" prepend-icon="event" readonly v-on="on"></v-text-field>
+      <ValidationProvider :name="$attrs.label" :rules="rules">
+        <v-text-field
+          v-model="innerDate"
+          v-bind="$attrs"
+          prepend-icon="event"
+          readonly
+          v-on="on"
+          slot-scope="{errors, valid}"
+          :error-messages="errors"
+          :success="valid"
+        ></v-text-field>
+      </ValidationProvider>
     </template>
     <v-date-picker v-model="innerDate" no-title scrollable>
       <v-spacer></v-spacer>
@@ -20,6 +31,7 @@
 </template>
 
 <script>
+import { ValidationProvider } from "vee-validate";
 export default {
   props: {
     rules: {
@@ -31,18 +43,27 @@ export default {
       type: null
     }
   },
+  components: {
+    ValidationProvider
+  },
+
   watch: {
     innerDate(newValue) {
       this.$emit("input", newValue);
+    },
+    value(newVal) {
+      this.innerDate = newVal;
     }
   },
   data: () => ({
-    innerDate: new Date().toISOString().substr(0, 10),
+    innerDate: "",
     menu: false
-  }),
-  created() {
-    alert("im created");
-  }
+  })
+  // created() {
+  //   if (!this.value) {
+  //     this.innerDate = new Date().toISOString().substr(0, 10);
+  //   }
+  // }
 };
 </script>
 

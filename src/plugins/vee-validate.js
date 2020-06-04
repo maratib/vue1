@@ -1,8 +1,11 @@
 import Vue from "vue";
+import * as VeeValidate from "vee-validate";
 import { extend, localize } from "vee-validate";
-import { required, email, min, max } from "vee-validate/dist/rules";
+import { required, email, integer, min, max, min_value, max_value } from "vee-validate/dist/rules";
 import ar from "vee-validate/dist/locale/ar.json";
 import en from "vee-validate/dist/locale/en.json";
+
+Vue.use(VeeValidate, { inject: false });
 
 
 // Install required rule.
@@ -11,16 +14,30 @@ extend("required", required);
 // Install email rule.
 extend("email", email);
 
+// Install email rule.
+extend("integer", integer);
+
 // Install min rule.
 extend("min", min);
 
 // Install min rule.
 extend("max", max);
 
+// Install min rule.
+extend("min_value", min_value);
+
+// Install min rule.
+extend("max_value", max_value);
+
 // Install Custom Rule
-// extend('positive', value => {
-// 	return value >= 0;
-// });
+extend('validDate', date => {
+	return Date.parse(date + " 23:59:59") >= new Date();
+});
+
+// Install Custom Rule
+extend('positive', value => {
+	return value >= 0;
+});
 
 // Install English and Arabic localizations.
 localize({

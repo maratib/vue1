@@ -1,11 +1,11 @@
 import Vue from "vue";
-import * as VeeValidate from "vee-validate";
+
 import { extend, localize } from "vee-validate";
 import { required, email, integer, min, max, min_value, max_value } from "vee-validate/dist/rules";
+
 import ar from "vee-validate/dist/locale/ar.json";
 import en from "vee-validate/dist/locale/en.json";
 
-Vue.use(VeeValidate, { inject: false });
 
 
 // Install required rule.
@@ -20,7 +20,7 @@ extend("integer", integer);
 // Install min rule.
 extend("min", min);
 
-// Install min rule.
+// Install min rule. 
 extend("max", max);
 
 // Install min rule.

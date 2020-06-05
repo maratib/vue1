@@ -4,8 +4,7 @@ import Test from '../views/Test';
 import Home from '../views/Home';
 import Login from '../views/Login';
 import Register from '../views/Register';
-import Projects from '../views/Projects';
-import Suppliers from '../views/Suppliers';
+import Slot from '../views/Slot';
 
 
 Vue.use(VueRouter);
@@ -17,14 +16,9 @@ const routes = [
     component: Home
   },
   {
-    path: '/projects',
-    name: 'Projects',
-    component: Projects
-  },
-  {
-    path: '/suppliers',
-    name: 'Suppliers',
-    component: Suppliers
+    path: '/slot',
+    name: 'Slot',
+    component: Slot
   },
   {
     path: '/login',

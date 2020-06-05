@@ -7,7 +7,7 @@ export default new Vuetify({
 	treeShake: true,
 	// customVariables: ['@/assets/css/variables.scss'],
 	theme: {
-		dark: false,
+		dark: true,
 		themes: {
 			dark: {
 				// primary: colors.blue.darken2,

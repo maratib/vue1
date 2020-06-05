@@ -26,8 +26,8 @@
       </router-link>
       <v-tabs color="primary" :align-with-title="centered" slider-size="4">
         <v-tab to="/" class="white--text">Home</v-tab>
-        <v-tab to="/projects" class="white--text">Projects</v-tab>
-        <v-tab to="/suppliers" class="white--text">Suppliers</v-tab>
+        <v-tab to="/test" class="white--text">Test</v-tab>
+        <v-tab to="/slot" class="white--text">Slot</v-tab>
       </v-tabs>
       <v-spacer />
       <!-- <Langs /> -->

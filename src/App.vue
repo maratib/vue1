@@ -31,11 +31,11 @@ export default {
 </script>
 
 <style lang="scss">
-.v-application {
-  font-family: "din-2014", sans-serif !important;
-  .title {
-    // To pin point specific classes of some components
-    font-family: "din-2014", sans-serif !important;
-  }
-}
+// .v-application {
+//   font-family: "din-2014", sans-serif !important;
+//   .title {
+//     // To pin point specific classes of some components
+//     font-family: "din-2014", sans-serif !important;
+//   }
+// }
 </style>
